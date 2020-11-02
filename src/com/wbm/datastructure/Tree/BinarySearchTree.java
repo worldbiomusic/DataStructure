@@ -96,15 +96,16 @@ public class BinarySearchTree extends BinaryTree
 		return root;
 	}
 	
-	public static Node threeJoin(BinarySearchTree left, int rootKey, BinarySearchTree right) {
+	public static BinarySearchTree threeJoin(BinarySearchTree left, int rootKey, BinarySearchTree right) {
 		/*
-		 * left의 모든 원소 < rootKey < right의 모든 원소 
+		 * left의 모든 원소 < rootKey < right의 모든 원소 가정
 		 */
 		Node root = new Node(rootKey, left.root, right.root);
-		return root;
+		BinarySearchTree bst = new BinarySearchTree(root);
+		return bst;
 	}
 	
-	public static Node twoJoin(BinarySearchTree left, BinarySearchTree right) {
+	public static BinarySearchTree twoJoin(BinarySearchTree left, BinarySearchTree right) {
 		/*
 		 * left의 모든 원소 < right의 모든 원소 
 		 */

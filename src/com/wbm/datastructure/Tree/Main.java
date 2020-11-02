@@ -4,6 +4,7 @@ public class Main
 {
 	public static void main(String[] args)
 	{
+		System.out.println("TREE RUN");
 		// =========BT
 //		Node root = new Node(1);
 //		Node n2 = new Node(2);
@@ -31,16 +32,24 @@ public class Main
 //		System.out.println(bst.getParent(15));
 
 		int[] keys = {18, 12 ,8, 13 ,5};
-		Heap heap = new Heap();
+		HeapWithHeapNode heap = new HeapWithHeapNode();
+		
+		// inorder: 12 13 5 18 8
 		for(int key : keys) {
 			heap.insert(key);
 		}
+//		
 		
-		heap.insert(19);
+//		heap.insert(19);
+//		
+//		heap.delete();
+//		heap.delete();
 		
-		// 12 13 8 18 5
+		// 5 12 13 8
 		heap.inorderTraversal();
 		heap.preorderTraversal();
+		
+		System.out.println("TREE END");
 	}
 }
 
