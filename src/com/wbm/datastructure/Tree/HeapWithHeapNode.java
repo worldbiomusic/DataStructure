@@ -2,10 +2,11 @@ package com.wbm.datastructure.Tree;
 
 import com.wbm.datastructure.Tree.interfaces.Heap;
 
-public class HeapWithHeapNode extends BinaryTree implements Heap
+public class HeapWithHeapNode extends BinaryTreeApp implements Heap
 {
 	/*
 	 * Max Heap
+	 * 부모노드있는것으로 heap만들어보려했는데 실패
 	 */
 	HeapNode lastParent;
 	

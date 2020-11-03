@@ -1,14 +1,16 @@
 package com.wbm.datastructure.Tree;
 
-public class BinarySearchTree extends BinaryTree
+import com.wbm.datastructure.Tree.interfaces.BinarySearchTree;
+
+public class BinarySearchTreeApp extends BinaryTreeApp implements BinarySearchTree
 {
 //	public Node root;
 	
-	public BinarySearchTree() {
+	public BinarySearchTreeApp() {
 		this(null);
 	}
 	
-	public BinarySearchTree(Node root) {
+	public BinarySearchTreeApp(Node root) {
 		super(root);
 	}
 	
@@ -29,7 +31,7 @@ public class BinarySearchTree extends BinaryTree
 		else // if(key > root.key) {
 			return searchNode(root.right, key);
 	}
-	
+	@Override
 	public void insert(int key) {
 		this.root = this.insertNode(this.root, key);
 	}
@@ -53,7 +55,7 @@ public class BinarySearchTree extends BinaryTree
 		// 2.재귀적으로 구현했으므로 현재 노드 반환
 		return root;
 	}
-	
+	@Override
 	public Node delete(int key) {
 		return this.deleteNode(this.root, key);
 	}
@@ -80,7 +82,7 @@ public class BinarySearchTree extends BinaryTree
 			}
 			else
 			{ // 자식 2 (왼쪽의 max값 사용)
-				root.key= new BinaryTree(root.left).maxValue().key; // 왼쪽에서 max가져와서 key등록
+				root.key= new BinaryTreeApp(root.left).maxValue().key; // 왼쪽에서 max가져와서 key등록
 				root.left=deleteNode(root.left, root.key); // 왼쪽에서 가져온 key노드 제거
 			}
 		}
@@ -96,26 +98,26 @@ public class BinarySearchTree extends BinaryTree
 		return root;
 	}
 	
-	public static BinarySearchTree threeJoin(BinarySearchTree left, int rootKey, BinarySearchTree right) {
+	public static BinarySearchTreeApp threeJoin(BinarySearchTreeApp left, int rootKey, BinarySearchTreeApp right) {
 		/*
 		 * left의 모든 원소 < rootKey < right의 모든 원소 가정
 		 */
 		Node root = new Node(rootKey, left.root, right.root);
-		BinarySearchTree bst = new BinarySearchTree(root);
+		BinarySearchTreeApp bst = new BinarySearchTreeApp(root);
 		return bst;
 	}
 	
-	public static BinarySearchTree twoJoin(BinarySearchTree left, BinarySearchTree right) {
+	public static BinarySearchTreeApp twoJoin(BinarySearchTreeApp left, BinarySearchTreeApp right) {
 		/*
 		 * left의 모든 원소 < right의 모든 원소 
 		 */
 		int leftMaxKey = left.maxValue().key;
 		left.delete(leftMaxKey);
 		
-		return BinarySearchTree.threeJoin(left, leftMaxKey, right);
+		return BinarySearchTreeApp.threeJoin(left, leftMaxKey, right);
 	}
 	
-	public void split(BinarySearchTree target, int splitKey, BinarySearchTree left, BinarySearchTree right) {
+	public static void split(BinarySearchTreeApp target, int splitKey, BinarySearchTreeApp left, BinarySearchTreeApp right) {
 		/*
 		 * target트리를 splitKey기준으로 나눠서 left, right에 할당해준다
 		 */

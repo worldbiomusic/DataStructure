@@ -4,7 +4,7 @@ import java.util.Stack;
 
 import com.wbm.datastructure.Tree.interfaces.Heap;
 
-public class HeapWithCount extends BinaryTree implements Heap
+public class HeapWithCount extends BinaryTreeApp implements Heap
 {
 	/*
 	 * MaxHeap

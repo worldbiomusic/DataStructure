@@ -1,14 +1,14 @@
 package com.wbm.datastructure.Tree;
 
-public class BinaryTree
+public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.BinaryTree
 {
 	Node root;
 	
-	public BinaryTree() {
+	public BinaryTreeApp() {
 		this(null);
 	}
 	
-	public BinaryTree(Node root) {
+	public BinaryTreeApp(Node root) {
 		this.root = root;
 	}
 	
@@ -105,8 +105,8 @@ public class BinaryTree
 		// TODO: queue 구현한 다음에 작성
 	}
 	
-	public Node getCopy() {
-		return this.copy(this.root);
+	public BinaryTreeApp getCopy() {
+		return new BinaryTreeApp(this.copy(this.root));
 	}
 	
 	private Node copy(Node root) {
@@ -128,9 +128,7 @@ public class BinaryTree
 		return (tree1 == null && tree2 == null) 
 				|| ((tree1.key == tree2.key) && (equalsTree(tree1.left, tree2.left) && equalsTree(tree1.right, tree2.right)));
 	}
-	
-	
-	
+
 }
 
 

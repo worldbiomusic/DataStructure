@@ -32,7 +32,7 @@ public class Main
 //		System.out.println(bst.getParent(15));
 
 		int[] keys = {18, 12 ,8, 13 ,5};
-		HeapWithHeapNode heap = new HeapWithHeapNode();
+		HeapWithArray heap = new HeapWithArray();
 		
 		// inorder: 12 13 5 18 8
 		for(int key : keys) {
@@ -42,12 +42,11 @@ public class Main
 		
 //		heap.insert(19);
 //		
-//		heap.delete();
-//		heap.delete();
+		heap.delete();
+		heap.delete();
 		
 		// 5 12 13 8
 		heap.inorderTraversal();
-		heap.preorderTraversal();
 		
 		System.out.println("TREE END");
 	}
