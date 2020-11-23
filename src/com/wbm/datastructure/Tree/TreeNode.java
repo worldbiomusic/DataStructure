@@ -1,15 +1,15 @@
 package com.wbm.datastructure.Tree;
 
-public class Node
+public class TreeNode
 {
 	public int key;
-	public Node left, right;
+	public TreeNode left, right;
 	
-	public Node(int key) {
+	public TreeNode(int key) {
 		this(key, null, null);
 	}
 	
-	public Node(int key, Node left, Node right) {
+	public TreeNode(int key, TreeNode left, TreeNode right) {
 		this.key = key;
 		this.left = left;
 		this.right = right;

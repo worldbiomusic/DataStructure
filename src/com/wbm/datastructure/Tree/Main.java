@@ -32,7 +32,7 @@ public class Main
 //		System.out.println(bst.getParent(15));
 
 		int[] keys = {18, 12 ,8, 13 ,5};
-		HeapWithArray heap = new HeapWithArray();
+		HeapWithArrayApp heap = new HeapWithArrayApp();
 		
 		// inorder: 12 13 5 18 8
 		for(int key : keys) {

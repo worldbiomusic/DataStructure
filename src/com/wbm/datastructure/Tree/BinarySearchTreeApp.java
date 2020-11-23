@@ -10,15 +10,15 @@ public class BinarySearchTreeApp extends BinaryTreeApp implements BinarySearchTr
 		this(null);
 	}
 	
-	public BinarySearchTreeApp(Node root) {
+	public BinarySearchTreeApp(TreeNode root) {
 		super(root);
 	}
 	
-	public Node search(int key) {
+	public TreeNode search(int key) {
 		return this.searchNode(this.root, key);
 	}
 	
-	private Node searchNode(Node root, int key)
+	private TreeNode searchNode(TreeNode root, int key)
 	{
 		if(root==null||root.key==key)
 		{
@@ -36,11 +36,11 @@ public class BinarySearchTreeApp extends BinaryTreeApp implements BinarySearchTr
 		this.root = this.insertNode(this.root, key);
 	}
 
-	private Node insertNode(Node root, int key)
+	private TreeNode insertNode(TreeNode root, int key)
 	{
 		if(root==null)
 		{ // 탐색에 실패했으므로 key를 넣을 수 있어서 key값을 가지는 새로운 노드 반환
-			return new Node(key, null, null);
+			return new TreeNode(key, null, null);
 		}
 		else if(key<root.key)
 		{
@@ -56,11 +56,11 @@ public class BinarySearchTreeApp extends BinaryTreeApp implements BinarySearchTr
 		return root;
 	}
 	@Override
-	public Node delete(int key) {
+	public TreeNode delete(int key) {
 		return this.deleteNode(this.root, key);
 	}
 
-	private Node deleteNode(Node root, int key)
+	private TreeNode deleteNode(TreeNode root, int key)
 	{
 		if(root==null)
 		{
@@ -102,7 +102,7 @@ public class BinarySearchTreeApp extends BinaryTreeApp implements BinarySearchTr
 		/*
 		 * left의 모든 원소 < rootKey < right의 모든 원소 가정
 		 */
-		Node root = new Node(rootKey, left.root, right.root);
+		TreeNode root = new TreeNode(rootKey, left.root, right.root);
 		BinarySearchTreeApp bst = new BinarySearchTreeApp(root);
 		return bst;
 	}
@@ -125,9 +125,9 @@ public class BinarySearchTreeApp extends BinaryTreeApp implements BinarySearchTr
 		// TODO: 내가 직접 짜기 (책에선 변수이름이 이상해서 이해안됨)
 	}
 	
-	public Node getParent(int key) {
-		Node node = this.root;
-		Node parent = null;
+	public TreeNode getParent(int key) {
+		TreeNode node = this.root;
+		TreeNode parent = null;
 		while(node != null) {
 			if(node.key == key) {
 				return parent;

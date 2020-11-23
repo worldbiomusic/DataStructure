@@ -1,6 +1,6 @@
 package com.wbm.datastructure.Tree.interfaces;
 
-import com.wbm.datastructure.Tree.Node;
+import com.wbm.datastructure.Tree.TreeNode;
 
 public interface BinaryTree
 {
@@ -12,7 +12,7 @@ public interface BinaryTree
 	public void levelorderTraversal();
 	
 	public BinaryTree getCopy(); 
-	public Node minValue();
-	public Node maxValue();
-	public boolean equals(Node other);
+	public TreeNode minValue();
+	public TreeNode maxValue();
+	public boolean equals(TreeNode other);
 }

@@ -2,7 +2,7 @@ package com.wbm.datastructure.Tree;
 
 import com.wbm.datastructure.Tree.interfaces.Heap;
 
-public class HeapWithHeapNode extends BinaryTreeApp implements Heap
+public class HeapWithHeapNodeApp extends BinaryTreeApp implements Heap
 {
 	/*
 	 * Max Heap
@@ -10,11 +10,11 @@ public class HeapWithHeapNode extends BinaryTreeApp implements Heap
 	 */
 	HeapNode lastParent;
 	
-	public HeapWithHeapNode() {
+	public HeapWithHeapNodeApp() {
 		this(null);
 	}
 	
-	public HeapWithHeapNode(HeapNode root) {
+	public HeapWithHeapNodeApp(HeapNode root) {
 		super(root);
 	}
 	

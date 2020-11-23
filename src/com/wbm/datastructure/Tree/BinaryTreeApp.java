@@ -2,13 +2,13 @@ package com.wbm.datastructure.Tree;
 
 public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.BinaryTree
 {
-	Node root;
+	TreeNode root;
 	
 	public BinaryTreeApp() {
 		this(null);
 	}
 	
-	public BinaryTreeApp(Node root) {
+	public BinaryTreeApp(TreeNode root) {
 		this.root = root;
 	}
 	
@@ -23,7 +23,7 @@ public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.Bina
 	}
 	
 	// root먼저 방문
-	private void preorder(Node root) {
+	private void preorder(TreeNode root) {
 		if(root == null) {
 			return;
 		} else {
@@ -40,7 +40,7 @@ public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.Bina
 	}
 	
 	// root 중간 방문
-	private void inorder(Node root) {
+	private void inorder(TreeNode root) {
 		if(root == null) {
 			return;
 		} else {
@@ -57,7 +57,7 @@ public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.Bina
 	}
 	
 	// root 마지막 방문
-	private void postorder(Node root) {
+	private void postorder(TreeNode root) {
 		if(root == null) {
 			return;
 		} else {
@@ -68,9 +68,9 @@ public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.Bina
 	}
 	
 	// 해당 트리의 가장 큰 값 반환
-	public Node maxValue()
+	public TreeNode maxValue()
 	{
-		Node node = this.root;
+		TreeNode node = this.root;
 		if(node == null) {
 			return node;
 		} else {
@@ -82,9 +82,9 @@ public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.Bina
 	}
 
 	// 해당 트리의 가장 작은 값 반환
-	public Node minValue()
+	public TreeNode minValue()
 	{
-		Node node = this.root;
+		TreeNode node = this.root;
 		if(node == null) {
 			return node;
 		} else {
@@ -101,7 +101,7 @@ public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.Bina
 	}
 	
 	// 레벨 순서 방문
-	private void levelorder(Node root) {
+	private void levelorder(TreeNode root) {
 		// TODO: queue 구현한 다음에 작성
 	}
 	
@@ -109,22 +109,22 @@ public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.Bina
 		return new BinaryTreeApp(this.copy(this.root));
 	}
 	
-	private Node copy(Node root) {
+	private TreeNode copy(TreeNode root) {
 		if(root == null) {
 			return root;
 		} else {
-			Node left = this.copy(root.left);
-			Node right = this.copy(root.right);
-			Node copiedNode = new Node(root.key, left, right);
+			TreeNode left = this.copy(root.left);
+			TreeNode right = this.copy(root.right);
+			TreeNode copiedNode = new TreeNode(root.key, left, right);
 			return copiedNode;
 		}
 	}
 	
-	public boolean equals(Node other) {
+	public boolean equals(TreeNode other) {
 		return this.equalsTree(this.root, other);
 	}
 	
-	private boolean equalsTree(Node tree1, Node tree2) {
+	private boolean equalsTree(TreeNode tree1, TreeNode tree2) {
 		return (tree1 == null && tree2 == null) 
 				|| ((tree1.key == tree2.key) && (equalsTree(tree1.left, tree2.left) && equalsTree(tree1.right, tree2.right)));
 	}

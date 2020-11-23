@@ -2,14 +2,14 @@ package com.wbm.datastructure.Tree;
 
 import com.wbm.datastructure.Tree.interfaces.Heap;
 
-public class HeapWithArray implements Heap
+public class HeapWithArrayApp implements Heap
 {
 	int[] arr; // [0]은 인덱스 계산이 안되므로 사용안함
 	int increment;
 	int count;
 	int size;
 	
-	public HeapWithArray()
+	public HeapWithArrayApp()
 	{
 		this.size = 10;
 		this.arr = new int[this.size];

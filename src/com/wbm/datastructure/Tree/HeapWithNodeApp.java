@@ -4,7 +4,7 @@ import java.util.Stack;
 
 import com.wbm.datastructure.Tree.interfaces.Heap;
 
-public class HeapWithCount extends BinaryTreeApp implements Heap
+public class HeapWithNodeApp extends BinaryTreeApp implements Heap
 {
 	/*
 	 * MaxHeap
@@ -12,16 +12,16 @@ public class HeapWithCount extends BinaryTreeApp implements Heap
 	 */
 	
 	int count;
-	public HeapWithCount() {
+	public HeapWithNodeApp() {
 		this(null);
 	}
 	
-	public HeapWithCount(Node root) {
+	public HeapWithNodeApp(TreeNode root) {
 		super(root);
 		this.count = 0;
 	}
 	
-	private Node getParentWithCount(int count) {
+	private TreeNode getParentWithCount(int count) {
 		if(count == 1) {
 			return null;
 		}
@@ -38,7 +38,7 @@ public class HeapWithCount extends BinaryTreeApp implements Heap
 			}
 		}
 		
-		Node parent = this.root;
+		TreeNode parent = this.root;
 		while(!isRights.isEmpty()) {
 			boolean isRight = isRights.pop();
 			if(isRight) {
@@ -54,13 +54,13 @@ public class HeapWithCount extends BinaryTreeApp implements Heap
 	public void insert(int key) {
 		this.count++;
 		if(this.count == 1) {
-			this.root = new Node(key);
+			this.root = new TreeNode(key);
 			return;
 		}
 		
 		int tmpCount = this.count;
-		Node parent = this.getParentWithCount(tmpCount);
-		Node newNode = new Node(key);
+		TreeNode parent = this.getParentWithCount(tmpCount);
+		TreeNode newNode = new TreeNode(key);
 		
 		if(parent.left == null) {
 			parent.left = newNode;
@@ -68,7 +68,7 @@ public class HeapWithCount extends BinaryTreeApp implements Heap
 			parent.right = newNode;
 		}
 		
-		Node tmpParent = parent;
+		TreeNode tmpParent = parent;
 		while(key > tmpParent.key) {
 			newNode.key = tmpParent.key;
 			newNode = tmpParent;
@@ -88,7 +88,7 @@ public class HeapWithCount extends BinaryTreeApp implements Heap
 		int rootKey = this.root.key;
 		
 		// 2.마지막 노드 값 keep, 삭제
-		Node parent = this.getParentWithCount(this.count);
+		TreeNode parent = this.getParentWithCount(this.count);
 		int lastKey;
 		if(parent.getChildrenCount() == 1) { // parent의 자식이 left만 있는 경우
 			lastKey = parent.left.key;
@@ -99,14 +99,14 @@ public class HeapWithCount extends BinaryTreeApp implements Heap
 		}
 		
 		// 3.자식들중 큰 값보다 root값이 더 작으면 값 교체, 아니면 연산 완료
-		Node p = root;
+		TreeNode p = root;
 		while(p.getChildrenCount() != 0) {
-			Node bigChild;
+			TreeNode bigChild;
 			if(p.getChildrenCount() == 1) {
 				bigChild = p.left;
 			} else { // childrenCount == 2
-				Node leftChild = p.left;
-				Node rightChild = p.right;
+				TreeNode leftChild = p.left;
+				TreeNode rightChild = p.right;
 				bigChild = (leftChild.key > rightChild.key) ? p.left : p.right;
 			}
 			
