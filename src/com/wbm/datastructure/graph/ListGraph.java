@@ -72,7 +72,7 @@ public class ListGraph implements Graph {
     public void BFS(int key) {
 	// graph node visited 초기화
 	this.initGraphNodeVisited();
-	
+
 	// enqueue: add(k), dequeue: remove()
 	Queue<Integer> queue = new LinkedList<>();
 
@@ -94,4 +94,28 @@ public class ListGraph implements Graph {
 
     }
 
+    public void dijkstra() {
+	// graph node visited 초기화
+	this.initGraphNodeVisited();
+
+	
+	
+	
+	
+	
+	
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
