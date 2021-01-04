@@ -2,7 +2,7 @@ package com.wbm.datastructure.Tree;
 
 public class BinaryTreeApp implements com.wbm.datastructure.Tree.interfaces.BinaryTree
 {
-	TreeNode root;
+	protected TreeNode root;
 	
 	public BinaryTreeApp() {
 		this(null);

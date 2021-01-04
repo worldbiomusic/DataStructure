@@ -36,7 +36,7 @@ public class BinarySearchTreeApp extends BinaryTreeApp implements BinarySearchTr
 		this.root = this.insertNode(this.root, key);
 	}
 
-	private TreeNode insertNode(TreeNode root, int key)
+	protected TreeNode insertNode(TreeNode root, int key)
 	{
 		if(root==null)
 		{ // 탐색에 실패했으므로 key를 넣을 수 있어서 key값을 가지는 새로운 노드 반환

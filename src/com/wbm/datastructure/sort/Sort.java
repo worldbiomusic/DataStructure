@@ -23,7 +23,7 @@ public abstract class Sort {
 	System.out.println();
     }
 
-    public void swap(int[] a, int x, int y) {
+    public static void swap(int[] a, int x, int y) {
 	int xValue = a[x];
 	a[x] = a[y];
 	a[y] = xValue;

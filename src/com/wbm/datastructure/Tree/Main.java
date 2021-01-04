@@ -31,24 +31,30 @@ public class Main
 //		
 //		System.out.println(bst.getParent(15));
 
+		
 		int[] keys = {18, 12 ,8, 13 ,5};
 		HeapWithArrayApp heap = new HeapWithArrayApp();
-		
-		// inorder: 12 13 5 18 8
-		for(int key : keys) {
-			heap.insert(key);
-		}
-//		
-		
-//		heap.insert(19);
-//		
-		heap.delete();
-		heap.delete();
-		
-		// 5 12 13 8
+		heap.arr= keys;
+		heap.count = keys.length;
+		heap.heapify();
 		heap.inorderTraversal();
+		System.out.println("OK");
 		
-		System.out.println("TREE END");
+//		// inorder: 12 13 5 18 8
+//		for(int key : keys) {
+//			heap.insert(key);
+//		}
+////		
+//		
+////		heap.insert(19);
+////		
+//		heap.delete();
+//		heap.delete();
+//		
+//		// 5 12 13 8
+//		heap.inorderTraversal();
+//		
+//		System.out.println("TREE END");
 	}
 }
 
